@@ -10,7 +10,7 @@
 Thread runtimeThread = Thread();
 Thread utilsThread = Thread();
 
-extern Servo _fl, _fr, rl, rr;
+extern Servo _lftFront, _lftRead, _rgtFront, _rgtRead;
 extern SoftwareSerial SoftSerial;
 
 
@@ -30,8 +30,11 @@ void setup() {
    utilsThread.onRun(utilsThreadCall);
    utilsThread.setInterval(UTILS_THREAD_INTV_MS);
    /* init servos */
-   //_fl.attach(pwmLF);
-   //_fr.attach()
+   /* _lftFront, _lftRead, _rgtFront, _rgtRead */
+   _lftFront.attach(5, 90, 180);
+   _lftRead.attach(6, 90, 180);
+   _rgtFront.attach(9, 90, 180);
+   _rgtRead.attach(10, 90, 180);
 }
 
 
